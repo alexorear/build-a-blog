@@ -2,4 +2,18 @@
 
 {% block content %}
   <h2>Welcome to Alex's Giant Sized Comic Blog</h2>
+
+  <form method="post">
+    <label>
+      <div>Title</div>
+        <input type="text" name="title">
+    </label>
+    <label>
+      <div>Body</div>
+        <textarea name="body"></textarea>
+    </label>
+    <br>
+    <input type="submit" name="Post it!">
+  </form>
+
 {% endblock %}
