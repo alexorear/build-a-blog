@@ -32,6 +32,7 @@ class MakePostHandler(webapp2.RequestHandler):
 
         if title and body:
             a = Post(title = title, body = body)
+            a.put()
             self.redirect("/blog")
         else:
             error = "Please enter a title and some body text"
@@ -40,8 +41,12 @@ class MakePostHandler(webapp2.RequestHandler):
 
 class BlogHandler(webapp2.RequestHandler):
     def get(self):
+        posts = db.GqlQuery("SELECT * FROM Post ORDER BY created DESC")
 
-        self.response.write("There will be a blog here soon.")
+        t = jinja_env.get_template("/blog.html")
+        content = t.render(posts = posts)
+        self.response.write(content)
+
 
 app = webapp2.WSGIApplication([
     ('/newpost', MakePostHandler),
