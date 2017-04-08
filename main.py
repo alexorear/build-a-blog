@@ -10,6 +10,11 @@ from google.appengine.ext import db
 template_dir = os.path.join(os.path.dirname(__file__), "templates")
 jinja_env = jinja2.Environment(loader = jinja2.FileSystemLoader(template_dir), autoescape=True)
 
+class Post(db.Model):
+    title = db.StringProperty(required = True)
+    body = db.TextProperty(required = True)
+    created = db.DateTimeProperty(auto_now_add = True)
+
 class MakePostHandler(webapp2.RequestHandler):
     def front_page(self, title = "", body = "", error = ""):
 
@@ -26,7 +31,8 @@ class MakePostHandler(webapp2.RequestHandler):
         body = self.request.get("body")
 
         if title and body:
-            self.response.write("Thanks!")
+            a = blog_post(title = title, body = body)
+            self.redirect("/blog")
         else:
             error = "Please enter a title and some body text"
             self.front_page(title, body, error)
