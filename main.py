@@ -10,10 +10,10 @@ from google.appengine.ext import db
 template_dir = os.path.join(os.path.dirname(__file__), "templates")
 jinja_env = jinja2.Environment(loader = jinja2.FileSystemLoader(template_dir), autoescape=True)
 
-class MainHandler(webapp2.RequestHandler):
+class MakePostHandler(webapp2.RequestHandler):
     def front_page(self, title = "", body = "", error = ""):
 
-        t = jinja_env.get_template("front-page.html")
+        t = jinja_env.get_template("/newpost.html")
         content = t.render(title = title, body = body, error = error)
         self.response.write(content)
 
@@ -32,6 +32,12 @@ class MainHandler(webapp2.RequestHandler):
             self.front_page(title, body, error)
 
 
+class BlogHandler(webapp2.RequestHandler):
+    def get(self):
+
+        self.response.write("There will be a blog here soon.")
+
 app = webapp2.WSGIApplication([
-    ('/', MainHandler)
+    ('/newpost', MakePostHandler),
+    ('/blog', BlogHandler)
 ], debug=True)
