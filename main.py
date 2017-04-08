@@ -31,7 +31,7 @@ class MakePostHandler(webapp2.RequestHandler):
         body = self.request.get("body")
 
         if title and body:
-            a = blog_post(title = title, body = body)
+            a = Post(title = title, body = body)
             self.redirect("/blog")
         else:
             error = "Please enter a title and some body text"
