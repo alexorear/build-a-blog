@@ -33,7 +33,8 @@ class MakePostHandler(webapp2.RequestHandler):
         if title and body:
             a = Post(title = title, body = body)
             a.put()
-            self.redirect("/blog")
+            id = str(a.key().id())
+            self.redirect("/blog/" + id)
         else:
             error = "Please enter a title and some body text"
             self.front_page(title, body, error)
