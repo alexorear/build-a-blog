@@ -2,12 +2,12 @@
 
 {% block content %}
 
-<h2>Check out these blog post</h2>
+<h2>Most Recent Post</h2>
 
 {% for post in posts %}
   <div class="post">
     <div class="title">{{ post.title }}</div>
-    <pre class="post-body">{{ post.body }}</pre>
+    <pre class="post-body"><p>{{ post.body }}</p></pre>
     <div class="created">{{ post.created }}</div>
   </div>
 {% endfor %}

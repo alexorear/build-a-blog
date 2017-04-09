@@ -41,7 +41,7 @@ class MakePostHandler(webapp2.RequestHandler):
 
 class BlogHandler(webapp2.RequestHandler):
     def get(self):
-        posts = db.GqlQuery("SELECT * FROM Post ORDER BY created DESC")
+        posts = db.GqlQuery("SELECT * FROM Post ORDER BY created DESC LIMIT 5")
 
         t = jinja_env.get_template("/blog.html")
         content = t.render(posts = posts)

@@ -1,20 +1,20 @@
 {% extends "base.html" %}
 
 {% block content %}
-  <h2>Welcome to Alex's Giant Sized Comic Blog</h2>
 
-  <form method="post">
+  <form class="post-form" method="post">
     <label>
-      <div>Title</div>
+      <div>Title:</div>
         <input type="text" name="title" value="{{ title }}">
     </label>
+    <br><br>
     <label>
-      <div>Body</div>
-        <textarea name="body">{{ body }}</textarea>
+      <div>Body:</div>
+        <textarea class="form-body" name="body">{{ body }}</textarea>
     </label>
     <div class="error">{{ error }}</div>
     <br>
-    <input type="submit" name="Post it!">
+    <input type="submit" value="Post it!">
   </form>
 
 {% endblock %}
