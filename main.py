@@ -47,8 +47,18 @@ class BlogHandler(webapp2.RequestHandler):
         content = t.render(posts = posts)
         self.response.write(content)
 
+class ViewPostHandler(webapp2.RequestHandler):
+        def get(self, id):
+            id = int(id)
+            post = Post.get_by_id(id)
+
+            t = jinja_env.get_template("/blog_post.html")
+            content = t.render(post = post)
+            self.response.write(content)
+
 
 app = webapp2.WSGIApplication([
     ('/newpost', MakePostHandler),
-    ('/blog', BlogHandler)
+    ('/blog', BlogHandler),
+    webapp2.Route('/blog/<id:\d+>', ViewPostHandler)
 ], debug=True)
