@@ -1,0 +1,47 @@
+html {
+    background-color:#82e66e;
+}
+
+body {
+  font-family: helvetica, sans-serif;
+  width: 100%;
+  max-width: 1024px;
+  min-height: 800px;
+  margin: auto;
+  padding: 30px;
+  background-color: white;
+}
+
+p {
+  font-family: helvetica, sans-serif;
+  font-size: 16px;
+  margin-bottom: 0px;
+}
+
+.post-form {
+    padding-left: 20px;
+}
+
+.post {
+  padding-top: 25px;
+}
+
+.title {
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.created {
+  font-size: 12px;
+  font-style: oblique;
+}
+
+.form-body {
+  width: 300px;
+  height: 150px;
+}
+
+.error {
+  color: red;
+  font-style: oblique;
+}
