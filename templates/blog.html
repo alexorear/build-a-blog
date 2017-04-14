@@ -2,7 +2,7 @@
 
 {% block content %}
 
-<h2>Most Recent Post</h2>
+<h2>Blog Post</h2>
 
 {% for post in posts %}
   <div class="post">
@@ -10,5 +10,16 @@
     <pre class="post-body"><p>{{ post.body }}</p></pre>
     <div class="created">{{ post.created }}</div>
   </div>
+<form>
 {% endfor %}
+
+<br><br>
+
+{% if prv %}
+  <div><a href="/blog?page={{ prv }}">prev</a></div>
+{% endif %}
+{% if nxt %}
+  <div><a href="/blog?page={{ nxt }}">next</a></div>
+{% endif %}
+
 {% endblock %}
