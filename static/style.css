@@ -1,5 +1,8 @@
 html {
-    background-color:#82e66e;
+    background-image: url("/static/images/bg.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
 }
 
 body {
@@ -8,8 +11,9 @@ body {
   max-width: 1024px;
   min-height: 800px;
   margin: auto;
-  padding: 30px;
   background-color: white;
+  border-left: solid black 5px;
+  border-right: solid black 5px;
 }
 
 p {
@@ -18,12 +22,61 @@ p {
   margin-bottom: 0px;
 }
 
-.post-form {
-    padding-left: 20px;
+h2 {
+  margin-left: 25px;
+}
+
+.nav_bar {
+  background-color: black;
+  width: 1024px;
+  height: 35px;
+  margin-top: -4px;
+}
+
+.nav_button {
+  display: inline-block;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-top: 6px;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.nav_button a:link{
+  color: #e6ebf1;
+  text-decoration: none;
+}
+
+.nav_button a:visited{
+  color: #e6ebf1;
+  text-decoration: none;
+}
+
+.nav_button a:hover{
+  color: #e4c812;
+  text-decoration: none;
+}
+
+.blog_container{
+  text-align: center;
 }
 
 .post {
-  padding-top: 25px;
+  display: inline-block;
+  padding: 25px;
+  margin: 25px;
+  border: solid black 2px;
+  border-radius: 15px;
+  text-align: left;
+  width: 350px;
+  height: 250px;
+}
+
+.post-body {
+}
+
+.post-form {
+    padding-left: 20px;
 }
 
 .title {
@@ -34,6 +87,7 @@ p {
 .created {
   font-size: 12px;
   font-style: oblique;
+  margin-top: 10px;
 }
 
 .form-body {
@@ -44,4 +98,10 @@ p {
 .error {
   color: red;
   font-style: oblique;
+}
+
+.blog_nav {
+  display: inline-block;
+  margin-left: 25px;
+  width: auto;
 }

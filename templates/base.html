@@ -5,10 +5,12 @@
     <link rel="stylesheet" type="text/css" href="/static/style.css">
   </head>
 <body>
-  <a href="/blog"><h1>Welcome to Alex's Test Blog</h1></a>
-  <ul>
-      <li><a href="/newpost">Create New Post</a>
-  </ul>
+
+  <img src="/static/images/blog_banner_halftone.jpg"/>
+  <div class="nav_bar">
+    <div class="nav_button"><a href="/blog">Blog</a></div>
+    <div class="nav_button"><a href="/newpost">Create New Post</a></div>
+  </div>
 
   {% block content %}
   {% endblock %}
